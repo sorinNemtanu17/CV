@@ -1,0 +1,139 @@
+.wrapper {
+  font-family: 'Playfair Display', sans-serif;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  color: #618179;
+  margin: 50px 0 100px;
+}
+.card {
+  min-width: 70%;
+  height: 340px;
+  perspective: 1500px;
+}
+.card .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(0.75, 0, 0.85, 1);
+}
+.more {
+  display: none;
+}
+.more:checked ~ .content {
+  transform: rotateY(180deg);
+}
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border-radius: 6px;
+}
+
+.front .inner,
+.back .inner {
+  height: 100%;
+  display: grid;
+  padding: 1.5em;
+  transform: translateZ(80px) scale(0.9);
+}
+.front,
+.back {
+  background-size: cover;
+  background-position: center center;
+}
+.front:after,
+.back:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  backface-visibility: hidden;
+  background-color: #e1e3d9;
+  box-shadow: 0 0 10px 1px #ccc;
+}
+.front .inner {
+  grid-template-rows: 3fr 1fr 1fr 1fr 2fr 1fr;
+  justify-items: center;
+}
+.front h2 {
+  grid-row: 2;
+  margin-bottom: 0.3em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-shadow: 0 0 6px #0000001a;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.front h2:nth-child(2) {
+  grid-row: 3;
+}
+.front p {
+  grid-row: 5;
+  font-size: 1.5rem;
+}
+/* ===== back ========= */
+.back {
+  transform: rotateY(180deg);
+}
+
+.back .inner {
+  grid-template-rows: 1fr 14fr 1fr;
+  grid-column-gap: 0.8em;
+  justify-items: center;
+}
+.back .description {
+  grid-row: 2;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  line-height: 1.4em;
+  overflow: auto;
+  padding-right: 10px;
+}
+.description ul li {
+  list-style: disc;
+  margin-left: 20px;
+}
+.back .button {
+  grid-column: 1/-1;
+  justify-self: center;
+}
+.button {
+  grid-row: -1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  padding: 0 1.5em;
+  height: 3em;
+  line-height: 2.8em;
+  min-width: 3em;
+  background-color: transparent;
+  box-shadow: 0 0 20px 1px #c9c9c9d2;
+  color: #798683;
+  border-radius: 4px;
+  text-align: center;
+  backface-visibility: hidden;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 20px 1px #c9c9c980;
+}
+.button:hover {
+  background-color: #fff;
+}
+@media screen and (max-width: 1200px) {
+  .card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,31 @@
+.close-menu span:nth-child(1) {
+  transform: rotate(-36deg) translate3D(-3px, 6px, 0px);
+}
+.close-menu span:nth-child(2) {
+  opacity: 0;
+}
+.close-menu span:nth-child(3) {
+  transform: rotate(36deg) translate3D(-5px, -6px, 0px);
+}
+.menu-top-visible,
+.nav-background-visible {
+  opacity: 1;
+  width: 100%;
+}
+
+/*========== hover line ==========*/
+
+.hover-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  width: 0;
+  background-color: black;
+  transition: all 0.5s ease-out;
+  overflow: hidden;
+}
+a:hover > .hover-line {
+  width: 100%;
+}
