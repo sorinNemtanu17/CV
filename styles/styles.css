@@ -147,7 +147,9 @@ main {
   color: #151515;
   justify-items: baseline;
 }
-
+.contact a:last-child img {
+  width: 50%;
+}
 /* ============== middle content =============== */
 
 .middle-block {
@@ -398,10 +400,10 @@ main {
     max-width: 100%;
     margin: 5px 0 0 5px;
   }
-  .menu-button {
+  /* .menu-button {
     background-color: #ffffff;
     border-radius: 50%;
-  }
+  } */
   .menuTop a {
     letter-spacing: 1px;
   }
